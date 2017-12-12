@@ -28,3 +28,8 @@ https://www.w3schools.com/js/js_hoisting.asp
 https://stackoverflow.com/questions/35537619/why-are-es6-classes-not-hoisted    
 https://blog.thoughtram.io/angular/2015/09/03/forward-references-in-angular-2.html     
 https://scotch.io/tutorials/understanding-hoisting-in-javascript   
+
+### null-vs-undefined
+undefined means a variable has been declared but has not yet been assigned a value.
+On the other hand, null is an assignment value. It can be assigned to a variable as a representation of no value.
+Also, undefined and null are two distinct types: undefined is a type itself (undefined) while null is an object.
