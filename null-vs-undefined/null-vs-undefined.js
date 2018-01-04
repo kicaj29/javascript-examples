@@ -5,6 +5,7 @@ function nullVsUndefined_Example1(){
 	var y;
 	var z = '';
 	var zz = ' ';
+	var u = undefined;
 	
 	debugger;
 	
@@ -43,5 +44,25 @@ function nullVsUndefined_Example1(){
 	
 	if (!zz){
 		console.log('!zz');
+	}
+	
+	if (y !== 'abc'){
+		console.log('y !== "abc"');
+	}
+	
+	if (u) {
+		console.log('u');
+	}
+	
+	if (u !== undefined) {
+		console.log('u !== undefined');
+	}
+	
+	if (!u) {
+		console.log('!u');
+	}
+	
+	if (u == undefined) {
+		console.log('u == undefined');
 	}
 }
