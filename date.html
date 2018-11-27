@@ -6,21 +6,22 @@
     <title></title>
     <script>
         function btnTestDate() {
+			console.log("The following statement creates a Date object with the arguments treated as UTC instead of local????.");
 			var dateUTC = new Date(1543352995130);
 			console.log("dateUTC:" + dateUTC);
 			console.log("dateUTC getHours:" + dateUTC.getHours());
 			console.log("dateUTC getUTCHours:" + dateUTC.getUTCHours());
 			console.log("------------------------");
 			
+			console.log("The following statement creates a Date object with the arguments treated as local time.");
 			var dateLocal = new Date(2018, 10, 27, 22, 9, 55);
 			console.log("dateLocal:" + dateLocal);
 			console.log("dateLocal getHours:" + dateUTC.getHours());
 			console.log("dateLocal getUTCHours:" + dateUTC.getUTCHours());
 			console.log("------------------------");
 			
+			console.log("The following statement creates a Date object with the arguments treated as UTC instead of local.");
 			var dateUTC1 = new Date(Date.UTC(2018, 10, 27, 22, 9, 55));
-			// it looks that passed paramters are treated as local time, so 22 hours is in my local time zone
-			// but then how to create UTC date from UTC values????
 			console.log("dateUTC1 (Date.UTC):" + dateUTC1);
 			console.log("dateUTC1 (Date.UTC) getHours:" + dateUTC1.getHours());
 			console.log("dateUTC1 (Date.UTC) getUTCHours:" + dateUTC1.getUTCHours());
