@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function myFunction() {
+            console.log("myFunction");
+        }
+        function myFunctionOnchange() {
+            console.log("myFunctionOnchange");
+        }
+        function btnClick() {
+            document.getElementById("myInput").focus();
+            document.getElementById("myInput").value = new Date().getTime();
+            document.getElementById("myInput2").focus();
+        }
+    </script>
+</head>
+<body>
+    <input id="myInput" type="text" oninput="myFunction()" onchange="myFunctionOnchange()">
+    <input id="myInput2">
+    <button type="button" onclick="btnClick()">CLICK</button>
+</body>
+</html>

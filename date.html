@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function btnTestDate() {
+			var dateUTC = new Date(1543352995130);
+			console.log("dateUTC:" + dateUTC);
+			console.log("dateUTC getHours:" + dateUTC.getHours());
+			console.log("dateUTC getUTCHours:" + dateUTC.getUTCHours());
+			console.log("------------------------");
+			
+			var dateLocal = new Date(2018, 10, 27, 22, 9, 55);
+			console.log("dateLocal:" + dateLocal);
+			console.log("dateLocal getHours:" + dateUTC.getHours());
+			console.log("dateLocal getUTCHours:" + dateUTC.getUTCHours());
+			console.log("------------------------");
+			
+			var dateUTC1 = new Date(Date.UTC(2018, 10, 27, 22, 9, 55));
+			// it looks that passed paramters are treated as local time, so 22 hours is in my local time zone
+			// but then how to create UTC date from UTC values????
+			console.log("dateUTC1 (Date.UTC):" + dateUTC1);
+			console.log("dateUTC1 (Date.UTC) getHours:" + dateUTC1.getHours());
+			console.log("dateUTC1 (Date.UTC) getUTCHours:" + dateUTC1.getUTCHours());
+			console.log("------------------------");
+			
+			var date1 = new Date('August 19, 1975 23:15:30 GMT+07:00');
+			var date2 = new Date('August 19, 1975 23:15:30 GMT-02:00');
+			
+			console.log(date1.getTimezoneOffset());
+			// expected output: your local timezone offset in minutes
+			// (eg -120). NOT the timezone offset of the date object.
+
+			console.log(date2.getTimezoneOffset());
+			// expected output: your local timezone offset in minutes
+			// (eg -120). NOT the timezone offset of the date object.
+        }
+    </script>
+</head>
+<body>
+    <button type="button" onclick="btnTestDate()">TEST DATE</button>
+	</br>
+	</br>
+	</br>
+	<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTimezoneOffset">getTimezoneOffset</a>
+	</br>
+	<a href="https://www.codementor.io/ayushgupta/date-and-time-in-javascript-fg1zamk72">Date and Time in JavaScript</a>
+</body>
+</html>

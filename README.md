@@ -35,3 +35,15 @@ On the other hand, null is an assignment value. It can be assigned to a variable
 Also, undefined and null are two distinct types: undefined is a type itself (undefined) while null is an object.
 
 ### merge-objects
+
+## Date and Time
+https://www.codementor.io/ayushgupta/date-and-time-in-javascript-fg1zamk72
+
+> Where new Date() is called with more than one argument, the specifed arguments represent local time. When called with one argument, it simply uses that as count of milliseconds from epoch(UTC or local doesn't matter here).
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+
+> Where Date is called as a constructor with more than one argument, the specified arguments represent local time. If UTC is desired, use new Date(Date.UTC(...)) with the same arguments.
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/UTC
+
