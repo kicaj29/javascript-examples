@@ -105,3 +105,37 @@ Example:
 5. Open the app in a new tab. This time v2 of the service worker is used and cache does not contain any more obsolete data. See that global.css is still the same version that was cached in step 1 (3:22:43 PM).
    ![sw_step4.png](./images/sw_step4.png)
    ![sw_step4_cache.png](./images/sw_step4_cache.png)
+
+## worklets
+
+Worklets are a very lightweight, highly specific, worker. They enable us as developers to hook into various parts of the browser’s rendering process.
+
+```js
+/* main.js */
+
+CSS.paintWorklet.addModule('myWorklet.js');
+```
+
+```js
+/* myWorklet.js */
+
+registerPaint('myGradient', class {
+  paint(ctx, size, properties) {
+    var gradient = ctx.createLinearGradient(0, 0, 0, size.height / 3);
+
+    gradient.addColorStop(0, "black");
+    gradient.addColorStop(0.7, "rgb(210, 210, 210)");
+    gradient.addColorStop(0.8, "rgb(230, 230, 230)");
+    gradient.addColorStop(1, "white");
+
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, size.width, size.height / 3);
+  }
+});
+```
+
+```css
+div {
+    background-image: paint(myGradient);
+}
+```
