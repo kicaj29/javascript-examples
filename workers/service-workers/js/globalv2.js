@@ -1,0 +1,1 @@
+console.log('global-v2.js executed');

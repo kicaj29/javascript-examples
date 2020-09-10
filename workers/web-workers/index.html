@@ -1,0 +1,40 @@
+<html>
+    <head></head>
+    <body>
+        <header>
+            <h1>Web workers</h1>
+        </header>
+        <main>
+            <pre id="output"></pre>
+        </main>
+        <script>
+            let output = document.getElementById('output');
+            let worker;
+
+            document.addEventListener('DOMContentLoaded', init);
+
+            function init() {
+                worker = new Worker('web-worker.js');
+                // worker.addEventListener('message', workerMessaged);
+                worker.onmessage = workerMessaged;
+                worker.addEventListener('error', workerError);
+
+                // worker.postMessage('Get started');
+
+                document.body.addEventListener('click', () => {
+                    // worker.postMessage('Other');
+                    worker.postMessage({'do':'fetch'});
+                });
+            }
+
+            function workerMessaged(ev) {
+                let data = ev.data;
+                output.textContent += JSON.stringify(data, null, 2) + '\n';
+            }
+
+            function workerError(err) {
+                console.log(err.message, err.filename);
+            }
+        </script>
+    </body>
+</html>
