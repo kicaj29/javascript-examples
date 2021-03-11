@@ -139,3 +139,15 @@ div {
     background-image: paint(myGradient);
 }
 ```
+
+# function calls: apply and call
+
+[example](./function-call/index.html)
+
+>"The difference is that apply lets you invoke the function with arguments as an array; call requires the parameters be listed explicitly. A useful mnemonic is "A for array and C for comma.""
+
+```js
+theFunction.apply(valueForThis, arrayOfArgs)
+
+theFunction.call(valueForThis, arg1, arg2, ...)
+```

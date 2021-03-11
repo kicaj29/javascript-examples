@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        class MyClass {
+            address = "data.com";
+            constructor() {
+
+            }
+
+            loadDataV1() {
+                console.log("v1 - loading data from: " + this.address);                    
+            }
+
+            loadDataV2 = () => {
+                console.log("v2 - loading data from: " + this.address);
+            }
+        }
+        function run() {
+            console.log('start');
+            var myObj = new MyClass();
+            myObj.loadDataV1();
+            myObj.loadDataV2();
+            
+            var v1 = myObj.loadDataV1;
+            var v2 = myObj.loadDataV2;
+
+            //v1(); // this will fail because `this` in loadDataV1() will be undefined
+            v2();
+
+            v1.call(myObj);         // as first parameter we pass value of `this`
+            v2.apply(myObj);        // as first parameter we pass value of `this`
+            console.log('end');
+        }
+    </script>
+</head>
+<body>
+    <button type="button" onclick="run()">Run</button>
+</body>
+</html>
